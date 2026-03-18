@@ -323,19 +323,27 @@ const Details = () => {
       });
 
       const genAI = new GoogleGenAI({ apiKey: (window as any).process?.env?.GEMINI_API_KEY || "" });
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      //const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      const result = await model.generateContent([
+      const result = await genAI.models.generateContent({
+      model: "gemini-1.5-flash",
+      contents: [
         {
-          inlineData: {
-            mimeType: "audio/mp3",
-            data: base64Audio
-          }
-        },
-        { text: "Please provide a verbatim transcript of this conversation. Format it as a JSON array of objects with 'speaker' (either 'User' or 'AI') and 'text' fields." }
-      ]);
+          role: "user",
+          parts: [
+            {
+              inlineData: {
+                mimeType: "audio/mp3",
+                data: base64Audio
+              }
+            },
+            { text: "Please provide a verbatim transcript of this conversation. Format it as a JSON array of objects with 'speaker' (either 'User' or 'AI') and 'text' fields." }
+          ]
+        }
+      ]
+    });
 
-      const text = result.response.text();
+      const text = result.text ?? "";
       const jsonMatch = text.match(/\[.*\]/s);
       if (jsonMatch) {
         setGeminiTranscript(JSON.parse(jsonMatch[0]));
