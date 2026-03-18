@@ -22,7 +22,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           max_call_duration: 600,
           participant_left_timeout: 60,
           enable_recording: true,
-          redirect_url: appUrl,
         },
       },
       {
