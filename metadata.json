@@ -1,0 +1,5 @@
+{
+  "name": "Agent Jules",
+  "description": "Meet Jules, your autonomous AI Sales Development Representative.",
+  "requestFramePermissions": ["camera", "microphone"]
+}
