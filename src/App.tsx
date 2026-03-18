@@ -19,9 +19,6 @@ const Navbar = () => (
         </div>
         <span className="font-bold tracking-tight text-xl">Agent<span className="text-emerald-500">Jules</span></span>
       </Link>
-      <div className="flex items-center gap-8">
-        <Link to="/history" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">History</Link>
-      </div>
     </div>
   </nav>
 );
@@ -171,10 +168,6 @@ const Home = () => {
             )}
             {loading ? "Preparing Session..." : "Meet Jules"}
           </motion.button>
-          
-          <Link to="/history" className="text-zinc-500 hover:text-white text-sm font-medium transition-colors">
-            View Conversation History
-          </Link>
         </div>
 
         {error && (
