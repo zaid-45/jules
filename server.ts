@@ -25,8 +25,8 @@ async function startServer() {
       const response = await axios.post(
         "https://tavusapi.com/v2/conversations",
         {
-          replica_id: "r72f7f7f7c8b",
-          persona_id: "pfe23abf050d",
+          replica_id: "pfddb96c7898",
+          persona_id: "r72f7f7f7c8b",
           conversation_name: "Meeting with Jules",
           conversational_context: "Agent Jules is an autonomous, reasoning-driven AI Sales Development Representative...",
           callback_url: appUrl,
