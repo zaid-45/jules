@@ -26,7 +26,7 @@ async function startServer() {
         "https://tavusapi.com/v2/conversations",
         {
           replica_id: "r72f7f7f7c8b",
-          persona_id: "pfddb96c7898",
+          persona_id: "p706851aa387",
           conversation_name: "Meeting with Jules",
           conversational_context: "Agent Jules is an autonomous, reasoning-driven AI Sales Development Representative...",
           callback_url: appUrl,
